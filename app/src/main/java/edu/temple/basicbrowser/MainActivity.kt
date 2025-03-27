@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        webView.settings.javaScriptEnabled = true
+
         //button function to send URL
         goButton.setOnClickListener{
             val url = urlEditText.text.toString()
