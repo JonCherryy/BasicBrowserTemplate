@@ -28,5 +28,19 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        //button function to send URL
+        goButton.setOnClickListener{
+            val url = urlEditText.text.toString()
+            httpPreprocessing(url)
+            webView.loadUrl(url)
+        }
+    }
+
+    private fun httpPreprocessing(url: String): String{
+        if(url.startsWith("https://")|| url.startsWith("http://")){
+            return url
+        }else{
+            return "https://$url"
+        }
     }
 }
